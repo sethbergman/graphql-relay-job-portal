@@ -1,4 +1,6 @@
 # graphql-relay-job-portal
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/sethbergman/graphql-relay-job-portal.svg)](https://greenkeeper.io/)
 **A GraphQL Implementation using express-graphql and graphql-relay**
 -------
 
