@@ -57,8 +57,8 @@
     },
     {
       "component": "header",
-      "heading": "graphql-relay-job-portal",
-      "subhead": "Express + GraphQL + Relay [WIP] | http://graphql-relay-job-portal.npmstack.com",
+      "heading": "contracting portal",
+      "subhead": "[Work In Progress]",
       "children": [
         {
           "component": "ui/TweetButton",
@@ -71,7 +71,16 @@
           "repo": "graphql-relay-job-portal"
         }
       ],
-      "text": "v0.0.1"
+      "text": "v0.0.1",
+      "slug": "express + graphql + relay",
+      "links": [
+        {
+          "href": "http://graphql-relay-job-portal.npmstack.com/graphql",
+          "text": "Query and Mutate"
+        }
+      ],
+      "backgroundImage": "https://casper.ghost.org/v1.0.0/images/advanced.jpg",
+      "image": "https://sethbergman.com/assets/images/retrocat-loader.gif"
     },
     {
       "component": "article",
