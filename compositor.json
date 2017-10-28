@@ -87,7 +87,7 @@
       "metadata": {
         "source": "github.readme"
       },
-      "html": "\n<p><a href=\"https://greenkeeper.io/\"><img src=\"https://badges.greenkeeper.io/sethbergman/graphql-relay-job-portal.svg\"></a></p>\n<h2><strong>A GraphQL Implementation using express-graphql and graphql-relay</strong></h2>\n<p><em>NOTE:</em></p>\n<ul>\n<li><p>Provide the valid database connection string inside <code>*config/mongoClient.js*</code> </p>\n</li>\n<li><p>npm i</p>\n</li>\n<li><p>npm start</p>\n</li>\n<li><p>visit <a href=\"http://localhost:4000/graphql\">http://localhost:4000/graphql</a> in browser and explore the query and mutation</p>\n</li>\n</ul>\n<hr>\n"
+      "html": "\n<hr>\n<p><a href=\"https://greenkeeper.io/\"><img src=\"https://badges.greenkeeper.io/sethbergman/graphql-relay-job-portal.svg\"></a></p>\n<h2><strong>A GraphQL Implementation using express-graphql and graphql-relay.</strong></h2>\n<h5>NOTE:</h5>\n<h4>Provide the valid database connection string inside</h4>\n<p><em><code>config/mongoClient.js</code></em> </p>\n<pre>  <span class=\"hljs-built_in\">npm</span> i\n\n  <span class=\"hljs-built_in\">npm</span> start</pre><p>Visit <strong><a href=\"http://localhost:4000/graphql\">http://localhost:4000/graphql</a></strong> and explore the query and mutation docs.</p>\n"
     },
     {
       "component": "footer",
