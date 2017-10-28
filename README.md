@@ -1,15 +1,17 @@
 # graphql-relay-job-portal
-**A GraphQL Implementation using express-graphql and graphql-relay**
+-------
+[![Greenkeeper badge](https://badges.greenkeeper.io/sethbergman/graphql-relay-job-portal.svg)](https://greenkeeper.io/)
+
+**A GraphQL Implementation using express-graphql and graphql-relay.**
 -------
 
-*NOTE:*
+##### NOTE:
 
-- Provide the valid database connection string inside `*config/mongoClient.js*` 
+#### Provide the valid database connection string inside 
+*`config/mongoClient.js`* 
    
-- npm i
+      npm i
 
-- npm start
+      npm start
 
-- visit http://localhost:4000/graphql in browser and explore the query and mutation
-
------------
+Visit __http://localhost:4000/graphql__ and explore the query and mutation docs.
