@@ -1,0 +1,392 @@
+schema {
+  query: RootQuery
+  mutation: Mutation
+}
+
+# A connection to a list of items.
+type ApplicantConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # A list of edges.
+  edges: [ApplicantEdge]
+  count: Int
+}
+
+# An edge in a connection.
+type ApplicantEdge {
+  # The item at the end of the edge
+  node: JobType
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+input ApplicationMutationInput {
+  jobId: ID!
+  clientMutationId: String
+}
+
+type ApplicationMutationPayload {
+  message: String
+  clientMutationId: String
+}
+
+type ApplicationType {
+  job(after: String, first: Int, before: String, last: Int): JobConnection
+  seeker(after: String, first: Int, before: String, last: Int): SeekerConnection
+  employer(after: String, first: Int, before: String, last: Int): EmployerConnection
+}
+
+# A connection to a list of items.
+type BookmarkConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # A list of edges.
+  edges: [BookmarkEdge]
+  count: Int
+}
+
+# An edge in a connection.
+type BookmarkEdge {
+  # The item at the end of the edge
+  node: BookmarkType
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+input BookmarkMutationInput {
+  jobId: ID!
+  clientMutationId: String
+}
+
+type BookmarkMutationPayload {
+  message: String
+  clientMutationId: String
+}
+
+type BookmarkType {
+  id: ID
+  title: String
+  description: String
+}
+
+input DeleteJobInput {
+  jobId: ID!
+  clientMutationId: String
+}
+
+type DeleteJobPayload {
+  message: String
+  clientMutationId: String
+}
+
+# A connection to a list of items.
+type EmployerConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # A list of edges.
+  edges: [EmployerEdge]
+  count: Int
+}
+
+# An edge in a connection.
+type EmployerEdge {
+  # The item at the end of the edge
+  node: EmployerType
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+input EmployerMutationInput {
+  company: String
+  email: String!
+  password: String!
+  clientMutationId: String
+}
+
+type EmployerMutationPayload {
+  message: String
+  clientMutationId: String
+}
+
+type EmployerType implements Node {
+  # The ID of an object
+  id: ID!
+  userId: ID
+  company: String
+  email: String
+  password: String
+  imageLink: String
+  industry: industries
+  ownerShip: ownerShips
+  totalEmployees: Int
+  address: String
+  location: locations
+  phone: String
+  fax: String
+  website: String
+  jobs: [JobType]
+}
+
+input EmployerUpdateMutationInput {
+  company: String
+  imageLink: String
+  industry: industries
+  ownerShip: ownerShips
+  totalEmployees: Int
+  address: String
+  location: locations
+  phone: String
+  fax: String
+  website: String
+  clientMutationId: String
+}
+
+type EmployerUpdateMutationPayload {
+  message: String
+  clientMutationId: String
+}
+
+enum industries {
+  ACCOUNTING
+  BANK
+  IT
+  ART
+  TOURISM
+}
+
+# A connection to a list of items.
+type JobConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # A list of edges.
+  edges: [JobEdge]
+  count: Int
+}
+
+# An edge in a connection.
+type JobEdge {
+  # The item at the end of the edge
+  node: JobType
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+input JobMutationInput {
+  title: String!
+  description: String!
+  position: String!
+  experience: String!
+  openings: Int!
+  education: String!
+  location: String
+  applyBefore: String!
+  salary: Float
+  clientMutationId: String
+}
+
+type JobMutationPayload {
+  message: String
+  clientMutationId: String
+}
+
+type JobType implements Node {
+  # The ID of an object
+  id: ID!
+  jobId: ID
+  title: String
+  description: String
+  experience: String
+  position: String
+  openings: Int
+  location: String
+  education: String
+  postedDate: String
+  applyBefore: String
+  salary: Float
+  employer: [EmployerType]
+  seeker(after: String, first: Int, before: String, last: Int): SconnectionConnection
+}
+
+input JobUpdateMutationInput {
+  jobId: ID
+  title: String
+  description: String
+  position: String
+  experience: String
+  openings: Int
+  education: String
+  location: String
+  applyBefore: String
+  salary: Float
+  clientMutationId: String
+}
+
+type JobUpdateMutationPayload {
+  message: JobType
+  clientMutationId: String
+}
+
+enum locations {
+  AUSTIN
+  DENVER
+  PALO_ALTO
+  NEW_YORK
+  CHICAGO
+  ATLANTA
+  MIAMI
+  WASHINGTON_DC
+}
+
+input LoginMutationInput {
+  email: String!
+  password: String!
+  clientMutationId: String
+}
+
+type LoginMutationPayload {
+  token: String
+  clientMutationId: String
+}
+
+type Mutation {
+  seeker(input: SeekerMutationInput!): SeekerMutationPayload
+  employer(input: EmployerMutationInput!): EmployerMutationPayload
+  job(input: JobMutationInput!): JobMutationPayload
+  login(input: LoginMutationInput!): LoginMutationPayload
+  applyJob(input: ApplicationMutationInput!): ApplicationMutationPayload
+  updateEmployer(input: EmployerUpdateMutationInput!): EmployerUpdateMutationPayload
+  updateSeeker(input: SeekerUpdateMutationInput!): SeekerUpdateMutationPayload
+  updateJob(input: JobUpdateMutationInput!): JobUpdateMutationPayload
+  deleteJob(input: DeleteJobInput!): DeleteJobPayload
+  bookmark(input: BookmarkMutationInput!): BookmarkMutationPayload
+}
+
+# An object with an ID
+interface Node {
+  # The id of the object.
+  id: ID!
+}
+
+enum ownerShips {
+  GOVERNMENT
+  NON_PROFIT
+  PRIVATE
+  PUBLIC
+}
+
+# Information about pagination in a connection.
+type PageInfo {
+  # When paginating forwards, are there more items?
+  hasNextPage: Boolean!
+
+  # When paginating backwards, are there more items?
+  hasPreviousPage: Boolean!
+
+  # When paginating backwards, the cursor to continue.
+  startCursor: String
+
+  # When paginating forwards, the cursor to continue.
+  endCursor: String
+}
+
+type RootQuery {
+  # Fetches an object given its ID
+  node(
+    # The ID of an object
+    id: ID!
+  ): Node
+  viewer: Viewer
+}
+
+# A connection to a list of items.
+type SconnectionConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # A list of edges.
+  edges: [SconnectionEdge]
+  count: Int
+}
+
+# An edge in a connection.
+type SconnectionEdge {
+  # The item at the end of the edge
+  node: SeekerType
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+# A connection to a list of items.
+type SeekerConnection {
+  # Information to aid in pagination.
+  pageInfo: PageInfo!
+
+  # A list of edges.
+  edges: [SeekerEdge]
+  count: Int
+}
+
+# An edge in a connection.
+type SeekerEdge {
+  # The item at the end of the edge
+  node: SeekerType
+
+  # A cursor for use in pagination
+  cursor: String!
+}
+
+input SeekerMutationInput {
+  email: String!
+  password: String!
+  clientMutationId: String
+}
+
+type SeekerMutationPayload {
+  message: String
+  clientMutationId: String
+}
+
+type SeekerType implements Node {
+  # The ID of an object
+  id: ID!
+  userId: ID
+  email: String
+  password: String
+  firstName: String
+  lastName: String
+  imageLink: String
+  education: String
+  address: String
+  jobs(after: String, first: Int, before: String, last: Int): ApplicantConnection
+  bookmarks(after: String, first: Int, before: String, last: Int): BookmarkConnection
+}
+
+input SeekerUpdateMutationInput {
+  firstName: String!
+  lastName: String!
+  imageLink: String
+  education: String
+  address: String
+  clientMutationId: String
+}
+
+type SeekerUpdateMutationPayload {
+  message: String
+  clientMutationId: String
+}
+
+type Viewer {
+  job(_id: ID, employerId: ID, title: String, location: String, education: String, after: String, first: Int, before: String, last: Int): JobConnection
+  employer(_id: ID, totalSelected: Int, totalShortlisted: Int, after: String, first: Int, before: String, last: Int): EmployerConnection
+  seeker(_id: ID, after: String, first: Int, before: String, last: Int): SeekerConnection
+  application(after: String, first: Int, before: String, last: Int): ApplicationType
+}
