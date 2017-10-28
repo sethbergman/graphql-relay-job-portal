@@ -30,7 +30,7 @@ module.exports = (req, res) => {
             const files = _.values(req.files);
             if (!files || files.length === 0) {
                 console.log('No files to Upload');
-                // return next();
+                return next();
                 res.status(403).send('No files to upload');
                 return;
             }
