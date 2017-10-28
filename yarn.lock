@@ -136,6 +136,10 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
+bson@0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-0.1.8.tgz#cf34fdcff081a189b589b4b3e5e9309cd6506c81"
+
 bson@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/bson/-/bson-1.0.4.tgz#93c10d39eaa5b58415cbc4052f3e53e562b0b72c"
@@ -143,6 +147,13 @@ bson@~1.0.4:
 buffer-equal-constant-time@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
+
+buffer-reduce@Raynos/buffer-reduce#dedup:
+  version "0.1.0"
+  resolved "https://codeload.github.com/Raynos/buffer-reduce/tar.gz/34f181a6191bb8e7159b08d6bba5d6e4aaec2c17"
+  dependencies:
+    reducers Raynos/reducers#dedup
+    reducible Raynos/reducible#v1.0.6
 
 buffer-shims@~1.0.0:
   version "1.0.0"
@@ -162,6 +173,20 @@ busboy@^0.2.11:
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
+
+cache-reduce@Raynos/cache-reduce#dedup:
+  version "0.1.1"
+  resolved "https://codeload.github.com/Raynos/cache-reduce/tar.gz/b4bc149cf7c4bc6845478090b272f743ab306ac4"
+  dependencies:
+    buffer-reduce Raynos/buffer-reduce#dedup
+    reducible Raynos/reducible#v1.0.6
+
+callback-reduce@Raynos/callback-reduce#dedup:
+  version "1.1.0"
+  resolved "https://codeload.github.com/Raynos/callback-reduce/tar.gz/5a50a8551ac0d78d998dbb48828c09eb0f7cd067"
+  dependencies:
+    functional "~1.0.0"
+    reducible Raynos/reducible#v1.0.6
 
 caller-path@^0.1.0:
   version "0.1.0"
@@ -641,6 +666,10 @@ function-bind@^1.0.2:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
 
+functional@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/functional/-/functional-1.0.0.tgz#0fa101fe943db570f48d3a8d6e2f391a15b2fea0"
+
 generate-function@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/generate-function/-/generate-function-2.0.0.tgz#6858fe7c0969b7d4e9093337647ac79f60dfbe74"
@@ -685,11 +714,11 @@ graphql-relay@^0.5.1:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/graphql-relay/-/graphql-relay-0.5.3.tgz#56a78ac07c87d89795a34db6b8e9681b827be5b5"
 
-graphql@^0.9.1:
-  version "0.9.6"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.9.6.tgz#514421e9d225c29dfc8fd305459abae58815ef2c"
+graphql@^0.11.7:
+  version "0.11.7"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.11.7.tgz#e5abaa9cb7b7cccb84e9f0836bf4370d268750c6"
   dependencies:
-    iterall "^1.0.0"
+    iterall "1.1.3"
 
 has-ansi@^2.0.0:
   version "2.0.0"
@@ -840,7 +869,7 @@ isemail@1.x.x:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/isemail/-/isemail-1.2.0.tgz#be03df8cc3e29de4d2c5df6501263f1fa4595e9a"
 
-iterall@^1.0.0:
+iterall@1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.1.3.tgz#1cbbff96204056dde6656e2ed2e2226d0e6d72c9"
 
@@ -952,6 +981,10 @@ merge-descriptors@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
 
+method@~2.0.x:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/method/-/method-2.0.0.tgz#e449848defa6daef10b8163d9d9aa2d071b7500f"
+
 methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
@@ -990,6 +1023,16 @@ moment@2.x.x, moment@^2.17.1:
   version "2.19.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.1.tgz#56da1a2d1cbf01d38b7e1afc31c10bcfa1929167"
 
+mongo-client@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/mongo-client/-/mongo-client-0.2.1.tgz#41df55e9768b1eeea3aafc8b46983e12ae289e19"
+  dependencies:
+    cache-reduce Raynos/cache-reduce#dedup
+    callback-reduce Raynos/callback-reduce#dedup
+    mongodb "~1.2.7"
+    reducers Raynos/reducers#dedup
+    reducible Raynos/reducible#v1.0.6
+
 mongodb-core@2.1.17:
   version "2.1.17"
   resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-2.1.17.tgz#a418b337a14a14990fb510b923dee6a813173df8"
@@ -1004,6 +1047,12 @@ mongodb@2.2.33:
     es6-promise "3.2.1"
     mongodb-core "2.1.17"
     readable-stream "2.2.7"
+
+mongodb@~1.2.7:
+  version "1.2.14"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-1.2.14.tgz#269665552066437308d0942036646e6795c3a9a3"
+  dependencies:
+    bson "0.1.8"
 
 mongoose@^4.8.4:
   version "4.12.4"
@@ -1297,6 +1346,18 @@ rechoir@^0.6.2:
   resolved "https://registry.yarnpkg.com/rechoir/-/rechoir-0.6.2.tgz#85204b54dba82d5742e28c96756ef43af50e3384"
   dependencies:
     resolve "^1.1.6"
+
+reducers@Raynos/reducers#dedup:
+  version "3.0.0-alpha"
+  resolved "https://codeload.github.com/Raynos/reducers/tar.gz/637bda2ef7845baceebe0fd0ad6cfde4cf289b36"
+  dependencies:
+    reducible Raynos/reducible#v1.0.6
+
+reducible@Raynos/reducible#v1.0.6:
+  version "1.0.6"
+  resolved "https://codeload.github.com/Raynos/reducible/tar.gz/2f3899f22325af695a6b33d5369467d51ba82eda"
+  dependencies:
+    method "~2.0.x"
 
 regexp-clone@0.0.1, regexp-clone@^0.0.1:
   version "0.0.1"

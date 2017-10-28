@@ -15,6 +15,10 @@ const root = {
     ip: (args, request) => request.ip,
 };
 
+app.get('/', (req, res) => {
+  res.redirect('/graphql')
+})
+
 app.use(cors());
 app.use('/schema', (req, res, next) => {
     res.set('Content-Type', 'text/plain');
